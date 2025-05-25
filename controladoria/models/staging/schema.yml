@@ -1,0 +1,20 @@
+
+version: 2
+
+models:
+  - name: stg_balancete
+    description: "tabela que contêm os dados previamente tratados do pdf"
+    columns:
+      - name: id_conta
+        description: "identificadores dos planos de contas"
+        data_tests:
+          - unique
+          - not_null
+      - name: conta
+        description: "nomenclatura da conta contábil"
+        data_tests:
+          - not_null
+      - name: saldo
+        description: "saldo da conta contábil"
+        data_tests:
+          - not_null
