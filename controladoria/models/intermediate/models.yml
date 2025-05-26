@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: int_balancete # nome do modelo
+    column:
+      - name:  id_conta # nome da couluna
+        description: # identificador da conta contabil
+
+      - name: conta # nome da coluna
+        description: # nomenclatura da conta contabil
+
+      - name: saldo # nome da coluna
+        description: # saldo da conta contabil
+      
+      - name: conta_agregadora # nome da coluna
+        description: # informação sobre o tipo de conta agregador true/false
+      
+      - name: conta_pai # conta correspondente no nivel acima
+        description: # informa qual o código da conta pai
+
