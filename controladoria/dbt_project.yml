@@ -14,7 +14,12 @@ profile: 'controladoria'
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
-seed-paths: ["seeds"]
+seed-paths: ["seeds"] 
+
+seeds:
+  controladoria:
+    plano_de_contas:
+      +delimiter: ";"
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
