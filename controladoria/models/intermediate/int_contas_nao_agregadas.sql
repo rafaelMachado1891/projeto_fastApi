@@ -1,24 +1,25 @@
-WITH int_balancete AS (
+WITH int_contas_nao_agregadas AS (
     SELECT 
         * 
     FROM  {{ ref('stg_balancete') }} 
 
 ),
-int_plano_de_conas AS (
+int_plano_de_contas AS (
     SELECT 
         *
     FROM {{ ref('plano_de_contas') }}
 ),
-relatorio_agrupado AS (
+contas_nao_agregadas AS (
     SELECT 
         a.id_conta,
         b.conta,
         b.conta_agregadora,
         b.conta_pai,
         a.saldo
-    FROM int_balancete a
+    FROM int_contas_nao_agregadas a
     JOIN int_plano_de_contas b
-    WHERE b.conta_agregadora = "TRUE"
+    ON a.id_conta = b.id_conta
+    WHERE b.conta_agregadora = false
 )
 
-SELECT * FROM relatorio_agrupado
+SELECT * FROM contas_nao_agregadas
