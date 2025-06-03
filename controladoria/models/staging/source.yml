@@ -7,3 +7,4 @@ sources:
     tables: 
 
       - name: balancete
+      - name: plano_de_contas
