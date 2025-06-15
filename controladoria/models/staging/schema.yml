@@ -3,18 +3,44 @@ version: 2
 
 models:
   - name: stg_balancete
-    description: "tabela que contêm os dados previamente tratados do pdf"
+    description: "Tabela que contém os dados previamente tratados do PDF"
     columns:
       - name: id_conta
-        description: "identificadores dos planos de contas"
-        data_tests:
+        description: "Identificador do plano de contas"
+        tests:
           - unique
           - not_null
+
       - name: conta
-        description: "nomenclatura da conta contábil"
-        data_tests:
+        description: "Nome da conta contábil"
+        tests:
           - not_null
+
       - name: saldo
-        description: "saldo da conta contábil"
-        data_tests:
+        description: "Saldo da conta contábil"
+        tests:
           - not_null
+
+  - name: stg_plano_contas
+    description: "Tabela com a estrutura do plano de contas"
+    columns:
+      - name: nivel
+        description: "Ordem hierárquica do plano de contas"
+
+      - name: id_conta
+        description: "Identificador da conta contábil contida no balancete"
+
+      - name: conta
+        description: "Descrição da conta contábil"
+
+      - name: conta_agregadora
+        description: "Booleano indicando se a conta é ou não agregadora"
+
+      - name: conta_pai
+        description: "Indicação da conta principal à qual cada conta pertence"
+
+      - name: grupo
+        description: "Classificação do grupo pertencente de cada conta (ex: ativo, passivo)"
+
+      - name: estrutura
+        description: "Estrutura completa do plano de contas"

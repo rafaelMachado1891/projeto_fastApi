@@ -1,20 +1,26 @@
 version: 2
 
 models:
-  - name: int_balancete # nome do modelo
+  - name: int_balancete_agregadas # nome do modelo
     column:
-      - name:  id_conta # nome da couluna
-        description: # identificador da conta contabil
+      - name:  ativo # nome da couluna
+        description: # soma dos saldos das contas do ativo
 
-      - name: conta # nome da coluna
-        description: # nomenclatura da conta contabil
+      - name: passivo # nome da coluna
+        description: # soma do saldo das contas do passivo
 
-      - name: saldo # nome da coluna
-        description: # saldo da conta contabil
+      - name:  # patrimonio liquido # nome da coluna
+        description: # soma do saldo das contas do prtrimonio liquido
       
-      - name: conta_agregadora # nome da coluna
-        description: # informação sobre o tipo de conta agregador true/false
+      - name: receitas # nome da coluna
+        description: # valor total das receitas do período
       
-      - name: conta_pai # conta correspondente no nivel acima
-        description: # informa qual o código da conta pai
+      - name: receita liquida # nome da coluna 
+        description: # valor total da receita liquida
+      
+      - name: custos e despesas # nome da coluna
+        description: # valor total dos custos e despesas
+
+      - name: lucro liquido # nome da coluna
+        descrition: # lucro liquido do exercicio
 
